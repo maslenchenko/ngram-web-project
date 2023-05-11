@@ -4,11 +4,12 @@
   background-color: white;
   display: flex;
   flex-direction: row;
+  position: absolute;
+  align-items: center;
 }
 
 .header .header-name {
   width: 27%;
-  height: 11%;
   position: absolute;
   left: 11%;
   font-style: normal;
@@ -17,12 +18,10 @@
   line-height: 38px;
   text-transform: uppercase;
   color: #000000;
-  align-items: center;
 }
 
 .header .header-links {
   width: 38%;
-  height: 11%;
   display: flex;
   position: absolute;
   right: 11%;
@@ -33,18 +32,17 @@
   font-size: 17px;
   text-transform: uppercase;
   color: #000000;
-  align-items: center;
 }
 
 .header .header-links a {
   text-decoration: none;
   color: #000000;
-  /* background-color: none; */
+  background-color: none;
   border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1%;
+  padding: 1.5%;
 }
 
 .header .header-links a:hover {
@@ -52,10 +50,9 @@
   color: white;
   background-color: rgba(45, 155, 240, 0.6);
   border-radius: 15px;
-  height: 35%;
   transition: background-color 0.2s;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1%;
+  padding: 1.5%;
 }

@@ -6,39 +6,27 @@
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: row;
-  /* justify-content: center; */
+  align-items: center;
 }
 
 .footer .footer-contacts {
-    margin-top: 0.75%;
   position: inherit;
   right: 11%;
   width: 14%;
-  height: inherit;
   text-transform: uppercase;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   text-align: right;
+  line-height: 25%;
 }
-
-.footer .footer-contacts p:first-child {
-    margin-bottom: 1%;
-  }
-  
-  .footer .footer-contacts p:last-child {
-    margin-top: 1%;
-  }
 
 .footer .footer-text {
   position: inherit;
-  display: flex;
-  flex-direction: column;
-  column-gap: 3%;
   left: 11%;
   width: 19%;
-  height: inherit;
   text-transform: uppercase;
+  line-height: 25%;
 }
 
 .footer .footer-text .ngram {
@@ -51,12 +39,4 @@
   font-style: normal;
   font-weight: 540;
   font-size: 14px;
-}
-
-.footer .footer-text p:first-child {
-  margin-bottom: 1%;
-}
-
-.footer .footer-text p:last-child {
-  margin-top: 1%;
 }
