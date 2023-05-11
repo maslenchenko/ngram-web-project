@@ -1,0 +1,61 @@
+.header {
+  width: 100%;
+  height: 11%;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.header .header-name {
+  width: 27%;
+  height: 11%;
+  position: absolute;
+  left: 11%;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 38px;
+  text-transform: uppercase;
+  color: #000000;
+  align-items: center;
+}
+
+.header .header-links {
+  width: 38%;
+  height: 11%;
+  display: flex;
+  position: absolute;
+  right: 11%;
+  gap: 4%;
+  position: absolute;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  text-transform: uppercase;
+  color: #000000;
+  align-items: center;
+}
+
+.header .header-links a {
+  text-decoration: none;
+  color: #000000;
+  /* background-color: none; */
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
+}
+
+.header .header-links a:hover {
+  text-decoration: none;
+  color: white;
+  background-color: rgba(45, 155, 240, 0.6);
+  border-radius: 15px;
+  height: 35%;
+  transition: background-color 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
+}

@@ -1,0 +1,62 @@
+.footer {
+  width: 100%;
+  height: 11%;
+  position: absolute;
+  bottom: 0;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+}
+
+.footer .footer-contacts {
+    margin-top: 0.75%;
+  position: inherit;
+  right: 11%;
+  width: 14%;
+  height: inherit;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: right;
+}
+
+.footer .footer-contacts p:first-child {
+    margin-bottom: 1%;
+  }
+  
+  .footer .footer-contacts p:last-child {
+    margin-top: 1%;
+  }
+
+.footer .footer-text {
+  position: inherit;
+  display: flex;
+  flex-direction: column;
+  column-gap: 3%;
+  left: 11%;
+  width: 19%;
+  height: inherit;
+  text-transform: uppercase;
+}
+
+.footer .footer-text .ngram {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 17px;
+}
+
+.footer .footer-text .project {
+  font-style: normal;
+  font-weight: 540;
+  font-size: 14px;
+}
+
+.footer .footer-text p:first-child {
+  margin-bottom: 1%;
+}
+
+.footer .footer-text p:last-child {
+  margin-top: 1%;
+}
