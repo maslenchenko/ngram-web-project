@@ -1,0 +1,22 @@
+.predict-input-container {
+    display: flex;
+    align-items: center;
+    width: 300px;
+  }
+  
+  .predict-input-container input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .predict-input-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    color: #fff;
+    cursor: pointer;
+  }
+  
