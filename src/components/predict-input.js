@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {Link} from "react-router-dom";
 import '../styles/predictinput.css'
 
 function PredictInput() {
@@ -20,11 +21,11 @@ function PredictInput() {
       <div className="predict-input">
         <input
           type="text"
-          placeholder="Enter input value"
+          placeholder="Input text here..."
           value={inputValue}
           onChange={handleInputChange}
         />
-        <button onClick={handlePredict}>Predict</button>
+        <Link to="/analysis"> Predict </Link>
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import Predict from "./pages/predict";
 import About from './pages/about';
 import Team from './pages/team';
 import Contact from './pages/contact';
+import Analysis from './pages/analysis';
 
 function App() {
   return (
@@ -14,10 +15,11 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" exact component={Predict} />
+          <Route path="/" element={Predict()} />
           <Route path="/about" exact component={About} />
           <Route path="/team" exact component={Team} />
           <Route path="/contact" exact component={Contact} />
+          <Route path="/analysis" exact component={Analysis} />
         </Routes>
         <Footer />
       </Router>
