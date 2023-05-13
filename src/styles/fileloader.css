@@ -1,0 +1,62 @@
+.file-load {
+  position: absolute;
+  left: 11%;
+  top: 45%;
+  height: 14%;
+  width: 30%;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 5px solid rgba(173, 173, 196, 0.45);
+  border-radius: 20px;
+}
+
+.file-load button {
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  background-color: rgba(45, 155, 240, 0.6);
+  border-radius: 15px;
+  padding: 1.5%;
+  height: 55%;
+  width: 30%;
+  border: none;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  position: absolute;
+  top: 21%;
+  right: 6%;
+}
+
+.file-load button:focus,
+.file-load button:active,
+.file-load button:hover {
+  background-color: rgba(45, 155, 240, 1);
+  transition: background-color 0.2s;
+}
+
+/* .file-load label {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #808080;
+  position: absolute;
+  left: 6%;
+  top: 24%;
+} */
+
+.file-load .selected-files {
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: #808080;
+  position: absolute;
+  left: 6%;
+  top: 20%;
+}

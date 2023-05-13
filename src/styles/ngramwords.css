@@ -1,0 +1,53 @@
+.ngram-container {
+    position: absolute;
+    left: 11%;
+    top: 65%;
+    height: 14%;
+    width: 30%;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 5px solid rgba(173, 173, 196, 0.45);
+    border-radius: 20px;
+  }
+  
+  .ngram-container .ngram-title {
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #808080;
+    position: absolute;
+    left: 6%;
+    top: 20%;
+  }
+  
+  .ngram-container .ngram-list {
+    position: absolute;
+    right: 6%;
+    border: white;
+    border: 5px solid rgba(45, 155, 240, 0.6);
+    padding: 1.5%;
+    height: 55%;
+    width: 20%;
+    top: 22%;
+    border-radius: 15px;
+  }
+  
+  .ngram-container .ngram-list:focus,
+  .ngram-container .ngram-list:hover {
+    border: 5px solid rgba(45, 155, 240, 1);
+    transition: background-color 0.2s;
+    outline: none;
+  }
+  
+  .ngram-container .ngram-list option,
+  .ngram-container .ngram-list option:checked::selection {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #000000;
+    text-transform: uppercase;
+  }
+  
