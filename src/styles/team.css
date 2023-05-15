@@ -1,0 +1,42 @@
+
+.team-main {
+    font-family: "Poppins", sans-serif;
+    position: absolute;
+    top: 12%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+.team-title {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 33px;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.team-member {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #000000;
+    text-align: center;
+}
+
+.member-img {
+    borger-radius: 10px;
+
+}
+.member-description {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    /* width: 40%; */
+    margin-left: 33%;
+    margin-right: 33%;
+    text-align: center;
+}
