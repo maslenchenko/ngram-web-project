@@ -16,10 +16,10 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={Predict()} />
-          <Route path="/about" exact component={About} />
-          <Route path="/team" exact component={Team} />
-          <Route path="/contact" exact component={Contact} />
-          <Route path="/analysis" exact component={Analysis} />
+          <Route path="/about" element={About()} />
+          <Route path="/team" element={Team()} />
+          <Route path="/contact" element={Contact()} />
+          <Route path="/analysis" element={Analysis()} />
         </Routes>
         <Footer />
       </Router>
