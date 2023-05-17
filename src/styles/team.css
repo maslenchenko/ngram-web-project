@@ -1,42 +1,70 @@
-
-.team-main {
-    font-family: "Poppins", sans-serif;
-    position: absolute;
-    top: 12%;
-    width: 100%;
+.mentor {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* margin-bottom: 6%; */
+    line-height: 1.5;
   }
-  
 
-.team-title {
-    font-style: normal;
-    font-weight: 800;
-    font-size: 33px;
+.students {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 180px;
+}
+
+.team-main {
+    font-family: "Poppins", sans-serif;
+    align-items: center;
+    text-align: center;
     text-transform: uppercase;
     color: #000000;
+}
+
+.team-title {
+    margin-top: 10%;
+    margin-bottom: 5%;
+    font-weight: 800;
+    font-size: 33px;
 }
 
 .team-member {
     font-style: normal;
     font-weight: 600;
     font-size: 25px;
-    text-transform: uppercase;
-    color: #000000;
-    text-align: center;
+    align-items: center;
+    padding: 40px 70px;
 }
 
 .member-img {
-    borger-radius: 10px;
-
+    border-radius: 10px;
 }
-.member-description {
+
+.member-name {
     font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    text-transform: uppercase;
+    text-align: center;
+    max-width: 493px;
+    margin: 20px auto;
+}
+
+.mentor-description {
     font-weight: 300;
     font-size: 16px;
-    /* width: 40%; */
-    margin-left: 33%;
-    margin-right: 33%;
-    text-align: center;
+    max-width: 535px;
+    margin: 0,  auto;
+    margin-top: -1%;
+}
+
+.student-description {
+    font-weight: 300;
+    font-size: 16px;
+    padding: 0 80px;
+}
+
+.member-email {
+    padding-top: 15px;
+    font-size: 16px;
+
 }
