@@ -17,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={Predict()} />
           <Route path="/about" exact component={About} />
-          <Route path="/team" element={Team()} />
+          <Route path="/team" exact component={Team} />
           <Route path="/contact" exact component={Contact} />
           <Route path="/analysis" exact component={Analysis} />
         </Routes>
