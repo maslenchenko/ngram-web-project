@@ -11,10 +11,10 @@ const DropDown = ({heading, text}) => {
 
   return (
     <div className="dropdown-main">
-      <div className="dropdown-title">
-        <p className="dropdown-heading" onClick={handleOpen}>{ heading }
-            {open ? <IoIosArrowUp className="dropdown-icon" /> : <IoIosArrowDown className="dropdown-icon" /> }
-        </p>
+      <div className="dropdown-title"onClick={handleOpen}>
+        <p className="dropdown-heading">{ heading }</p>
+        {open ?<div className="icon-container"> <IoIosArrowUp className="dropdown-icon" /> 
+            </div>:<div  className="icon-container"><IoIosArrowDown className="dropdown-icon" /></div>  }
       </div>
       {open ? <div className="dropdown-text">{ text }</div> : null}
     </div>
