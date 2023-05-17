@@ -1,0 +1,64 @@
+.analysis-main {
+    width: 100%;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    /* border: #808080 solid 5px; */
+
+}
+
+.predict-area{
+    width: 430px;
+    height: 200px;
+    box-sizing: border-box;
+    resize: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    font-size: 18px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #808080;
+    transition: border-color 0.2s ease-in-out;
+    background: white;
+    font-family: "Poppins", sans-serif;
+    border: 5px solid rgba(45, 155, 240, 0.6);
+    border-radius: 20px;
+    font-weight: 500;
+    margin-bottom: 6%;
+}
+  
+.predict-area input:focus, textarea:focus{
+    outline: none;
+    border-color: rgba(45, 155, 240, 1);
+}
+
+.analysis-title {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 2%;
+    margin-left: -250px;
+
+}
+
+
+.text-unit  {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.analysis-unit {
+    width: 50%;
+    background-color: white;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #808080;
+    /* border: #808080 solid 5px; */
+}
