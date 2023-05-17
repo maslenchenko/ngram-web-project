@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={Predict()} />
           <Route path="/about" element={About()} />
           <Route path="/team" element={Team()} />
-          <Route path="/contact" exact component={Contact} />
+          <Route path="/contact" element={Contact()} />
           <Route path="/analysis" exact component={Analysis} />
         </Routes>
         <Footer />
