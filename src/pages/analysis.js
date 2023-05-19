@@ -1,26 +1,7 @@
 import React, {Component} from 'react'
 import '../styles/analysis.css'
 
-// import QuestionInput from '../components/question-input'
-// import PredictText from '../components/predict-textarea'
-
-
-// function Analysis() {
-//   return (
-//     <div className='analysis-main'>
-//       <div className='text-unit'>
-//         <h2 className='analysis-title'>Your input:</h2>
-//         <PredictText text="Input text here..."/>
-//         <h2 className='analysis-title'>Next words:</h2>
-//         <PredictText text="Predicted text here..."/>
-//       </div>
-//       <div className='analysis-unit'>
-//         <p>Analysis</p>
-//       </div>
-//     </div>
-//   )
-// }
-
+import PredictText from '../components/predict-textarea'
 
 class Analysis extends Component {
     constructor(props) {
@@ -89,6 +70,15 @@ class Analysis extends Component {
     render() {
         return (
             <div className='analysis-main'>
+            <div className='text-unit'>
+            <h2 className='analysis-title'>Your input:</h2>
+            <PredictText text="Input text here..."/>
+            <h2 className='analysis-title'>Next words:</h2>
+            <PredictText text="Predicted text here..."/>
+          </div>
+          <div className='analysis-unit'>
+            <p>Analysis</p>
+            <div>
                 <form onSubmit={this.handleTrainSubmit}>
                     <label>
                         Enter n:
@@ -123,6 +113,8 @@ class Analysis extends Component {
                 {this.state.resultPredict.output ?
                     <p>Result: {this.state.resultPredict.output.map((item, i) => <p key={i}>{item}</p>)}</p>
                     : <p>Result: </p>}
+            </div>
+            </div>
             </div>
         );
     }
