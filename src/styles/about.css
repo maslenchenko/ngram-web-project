@@ -2,7 +2,6 @@
     text-align: center;
     font-size: 3rem;
     margin-top: 10rem;
-    margin-left: 25%;
     margin-bottom: 50px;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
@@ -12,12 +11,14 @@
 }
 
 .about-drops {
-    width: 100%;
-    margin-left: 25%;
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 200px;
+}
+
+
+.about-main {
+    width: 100%;
+    border: #000000 1px solid;
 }
