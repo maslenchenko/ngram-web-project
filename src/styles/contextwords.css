@@ -22,27 +22,27 @@
     top: 20%;
   }
   
-  .context-container .context-list {
+  .context-container .context-input {
     position: absolute;
     right: 6%;
     border: white;
     border: 5px solid rgba(45, 155, 240, 0.6);
     padding: 1.5%;
-    height: 55%;
+    height: 33%;
     width: 20%;
     top: 22%;
     border-radius: 15px;
   }
   
-  .context-container .context-list:focus,
-  .context-container .context-list:hover {
+  .context-container .context-input:focus,
+  .context-container .context-input:hover {
     border: 5px solid rgba(45, 155, 240, 1);
     transition: background-color 0.2s;
     outline: none;
   }
   
-  .context-container .context-list option,
-  .context-container .context-list option:checked::selection {
+  .context-container .context-input option,
+  .context-container .context-input option:checked::selection {
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 500;
