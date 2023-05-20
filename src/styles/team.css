@@ -2,9 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* margin-bottom: 6%; */
     line-height: 1.5;
-  }
+}
 
 .students {
     display: grid;
@@ -12,7 +11,14 @@
     padding-bottom: 180px;
 }
 
+@media (max-width: 850px) {
+    .students {
+        grid-template-columns: 1fr;
+    }
+}
+
 .team-main {
+    margin-top: max(10%, 150px);
     font-family: "Poppins", sans-serif;
     align-items: center;
     text-align: center;
@@ -21,7 +27,6 @@
 }
 
 .team-title {
-    margin-top: 10%;
     margin-bottom: 5%;
     font-weight: 800;
     font-size: 33px;
@@ -53,7 +58,7 @@
     font-weight: 300;
     font-size: 16px;
     max-width: 535px;
-    margin: 0,  auto;
+    margin: 0 auto;
     margin-top: -1%;
 }
 
@@ -66,5 +71,4 @@
 .member-email {
     padding-top: 15px;
     font-size: 16px;
-
 }
