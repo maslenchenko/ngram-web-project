@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import '../styles/ngramwords.css';
 
-function NgramWords() {
-  const [range, setRange] = useState(1);
+function NgramWords({range, setRange}){
 
   const handleRangeChange = (event) => {
-    setRange(event.target.value);
+    const newRange = parseInt(event.target.value, 10);
+    setRange(newRange);
   };
 
   const renderOptions = () => {
@@ -23,7 +23,9 @@ function NgramWords() {
         {renderOptions()}
       </select>
     </div>
+
   );
 }
 
 export default NgramWords;
+

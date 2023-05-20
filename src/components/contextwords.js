@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "../styles/contextwords.css";
 
-function ContextWords() {
-  const [range, setRange] = useState(1);
+function ContextWords({range, setRange}) {
 
   const handleRangeChange = (event) => {
     setRange(Number(event.target.value));

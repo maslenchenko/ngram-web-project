@@ -6,7 +6,7 @@ class Analysis extends Component {
         super(props);
         this.state = {
             n: 0,
-            numToPredict: 5,
+            numToPredict: 0,
             path: '',
             context: '',
             predictedWords: '',
@@ -23,6 +23,10 @@ class Analysis extends Component {
         this.handleContextInput = this.handleContextInput.bind(this);
 
         this.handleTrainSubmit = this.handleTrainSubmit.bind(this);
+        const searchParams = new URLSearchParams(window.location.search);
+        this.state.context = searchParams.get('input');
+        this.state.n = searchParams.get('n');
+        this.state.numToPredict = searchParams.get('num_to_predict');
     }
 
     handleNInput(event) {
