@@ -55,28 +55,27 @@ function FileLoader({onSuccess, props}) {
             </div>
             <button class={"submit-button"}>Submit</button>
         </form>);
-
-
-
-
-// <div className="file-load">
-    //   <button onClick={() => document.getElementById("file-input").click()}>
-    //     Load Files
-    //   </button>
-    //   {props.maxSize && <p>Maximum file size: {props.maxSize} bytes</p>}
-    //   <div className="selected-files">
-    //     <p>Selected files: {selectedFiles ? selectedFiles.length : 0}</p>
-    //   </div>
-    //   <input
-    //     id="file-input"
-    //     type="file"
-    //     multiple
-    //     onChange={handleFileSelection}
-    //     accept=".txt"
-    //     style={{ display: "none" }}
-    //   />
-//     // </div>
+}
+//   return (
+//     <div className="file-load">
+//       <button onClick={() => document.getElementById("file-input").click()}>
+//         Upload
+//       </button>
+//       {props.maxSize && <p>Maximum file size: {props.maxSize} bytes</p>}
+//       <div className="selected-files">
+//         <p>Selected files: {selectedFiles ? selectedFiles.length : 0}</p>
+//       </div>
+//       <input
+//         id="file-input"
+//         type="file"
+//         multiple
+//         onChange={handleFileSelection}
+//         accept=".txt"
+//         style={{ display: "none" }}
+//       />
+//     </div>
 //   );
 // }
-}
+
+
 export default FileLoader;

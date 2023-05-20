@@ -1,32 +1,32 @@
 .file-load {
-    position: absolute;
-    left: 11%;
-    top: 45%;
-    height: 14%;
-    width: 30%;
-    box-sizing: border-box;
-    background: #ffffff;
-    border: 5px solid rgba(173, 173, 196, 0.45);
-    border-radius: 20px;
+  position: absolute;
+  left: 11%;
+  top: 45%;
+  height: 14%;
+  width: 30%;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 5px solid rgba(173, 173, 196, 0.45);
+  border-radius: 20px;
 }
 
 .file-load button {
-    text-transform: uppercase;
-    font-family: "Poppins", sans-serif;
-    background-color: rgba(45, 155, 240, 0.6);
-    border-radius: 15px;
-    padding: 1.5%;
-    height: 55%;
-    width: 30%;
-    border: none;
-    color: white;
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    position: absolute;
-    top: 21%;
-    right: 6%;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  background-color: rgba(45, 155, 240, 0.6);
+  border-radius: 15px;
+  padding: 1.5%;
+  height: 55%;
+  width: 20%;
+  border: none;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  position: absolute;
+  top: 21%;
+  right: 6%;
 }
 
 .file-load button:focus,
