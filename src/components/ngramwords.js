@@ -10,7 +10,7 @@ function NgramWords() {
 
   const renderOptions = () => {
     const options = [];
-    for (let i = 1; i <= 100; i++) {
+    for (let i = 1; i <= 10; i++) {
       options.push(<option key={i} value={i}>{i}</option>);
     }
     return options;
