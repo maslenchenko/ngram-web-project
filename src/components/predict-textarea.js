@@ -4,10 +4,10 @@ import '../styles/analysis.css'
 import '../styles/contact.css'
 
 
-function PredictText(placeholder) {
+function PredictText(placeholder, value) {
     return (
         <div>
-            <textarea className="predict-area" placeholder={placeholder.text}/>
+            <textarea className="predict-area" placeholder={placeholder.text} value={value.text} readOnly/>
         </div>
     );
 }

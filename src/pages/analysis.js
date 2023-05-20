@@ -1,17 +1,15 @@
 import React, {Component} from 'react'
 import '../styles/analysis.css'
 
-import PredictText from '../components/predict-textarea'
-
 class Analysis extends Component {
     constructor(props) {
         super(props);
         this.state = {
             n: 0,
-            numToPredict: 0,
+            numToPredict: 5,
             path: '',
             context: '',
-
+            predictedWords: '',
             resultTrain: {},
             resultPredict: {},
             resultPrevious: {}
@@ -25,7 +23,6 @@ class Analysis extends Component {
         this.handleContextInput = this.handleContextInput.bind(this);
 
         this.handleTrainSubmit = this.handleTrainSubmit.bind(this);
-        this.handlePredictSubmit = this.handlePredictSubmit.bind(this);
     }
 
     handleNInput(event) {
@@ -50,73 +47,61 @@ class Analysis extends Component {
         fetch(url) //, {headers: new Headers({
             // "ngrok-skip-browser-warning": "69420"})} )
             .then(res => res.json())
-            .then(res => this.setState({ path: this.state.path,
+            .then(res => this.setState({
+                path: this.state.path,
                 n: this.state.n,
-                resultTrain: res }));
+                resultTrain: res
+            }));
     }
 
-    async handlePredictSubmit(event) {
-        event.preventDefault();
-        const url = `${this.apiUrl}/predict?n=${this.state.n}&num_to_predict=${this.state.numToPredict}&context=${this.state.context}`;
-        fetch(url) //, {headers: new Headers({
-            // "ngrok-skip-browser-warning": "69420"})} )
-            .then(res => res.json())
-            .then(res => this.setState({ n: this.state.n,
-                numToPredict: this.state.numToPredict,
-                context: this.state.context,
-                resultPredict: res }));
+    handleInputChange = (event) => {
+        const context = event.target.value;
+        this.setState({context}, () => {
+            const url = `${this.apiUrl}/predict?n=${this.state.n}&num_to_predict=${this.state.numToPredict}&context=${this.state.context}`;
+            fetch(url)
+                .then(res => res.json())
+                .then(res => this.setState({predictedText: res.output[1]}));
+        });
     }
+
 
     render() {
         return (
             <div className='analysis-main'>
-            <div className='text-unit'>
-            <h2 className='analysis-title'>Your input:</h2>
-            <PredictText text="Input text here..."/>
-            <h2 className='analysis-title'>Next words:</h2>
-            <PredictText text="Predicted text here..."/>
-          </div>
-          <div className='analysis-unit'>
-            <p>Analysis</p>
-            <div>
-                <form onSubmit={this.handleTrainSubmit}>
-                    <label>
-                        Enter n:
-                        <input type="number" value={this.state.n} onChange={this.handleNInput} />
-                    </label>
-                    <label>
-                        Enter directory of Gutenberg files:
-                        <input type="text" value={this.state.path} onChange={this.handlePathInput} />
-                    </label>
-                    <button type="submit">Train</button>
-                </form>
-                {this.state.resultTrain.output ?
-                    <p>Result: {this.state.resultTrain.output.map((item, i) => <p key={i}>{item}</p>)}</p>
-                    : <p>Result: </p>}
+                <div className='text-unit'>
+                    <h2 className='analysis-title'>Your input:</h2>
+                    <textarea className="predict-area"
+                              placeholder="Input text here..."
+                              value={this.state.context}
+                              onChange={this.handleInputChange}/>
+                    <h2 className='analysis-title'>Next words:</h2>
+                    <textarea className="predict-area"
+                              value={this.state.predictedText}
+                              readOnly/>
+                </div>
+                <div className='analysis-unit'>
+                    <p>Analysis</p>
+                    <div>
+                        <form onSubmit={this.handleTrainSubmit}>
+                            <label>
+                                Enter n:
+                                <input type="number" value={this.state.n} onChange={this.handleNInput}/>
+                            </label>
+                            <label>
+                                Enter directory of Gutenberg files:
+                                <input type="text" value={this.state.path} onChange={this.handlePathInput}/>
+                            </label>
+                            <button type="submit">Train</button>
+                        </form>
+                        {this.state.resultTrain.output ?
+                            <p>Result: {this.state.resultTrain.output.map((item, i) => <p key={i}>{item}</p>)}</p>
+                            : <p>Result: </p>}
 
-
-                <form onSubmit={this.handlePredictSubmit}>
-                    <label>
-                        Enter n:
-                        <input type="number" value={this.state.n} onChange={this.handleNInput} />
-                    </label>
-                    <label>
-                        Enter number of words to predict:
-                        <input type="number" value={this.state.numToPredict} onChange={this.handleNumToPredictInput} />
-                    </label>
-                    <label>
-                        Enter context:
-                        <input type="text" value={this.state.context} onChange={this.handleContextInput} />
-                    </label>
-                    <button type="submit">Predict</button>
-                </form>
-                {this.state.resultPredict.output ?
-                    <p>Result: {this.state.resultPredict.output.map((item, i) => <p key={i}>{item}</p>)}</p>
-                    : <p>Result: </p>}
-            </div>
-            </div>
+                    </div>
+                </div>
             </div>
         );
     }
 }
+
 export default Analysis;
