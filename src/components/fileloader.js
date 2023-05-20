@@ -19,7 +19,7 @@ function FileLoader(props) {
   return (
     <div className="file-load">
       <button onClick={() => document.getElementById("file-input").click()}>
-        Load Files
+        Upload
       </button>
       {props.maxSize && <p>Maximum file size: {props.maxSize} bytes</p>}
       <div className="selected-files">
