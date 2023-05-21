@@ -24,7 +24,7 @@ function PredictInput({inputValue, setInputValue, ngramSize, wordsToPredict, sta
                     onChange={handleInputChange}
                 />
                 <Link
-                    to={`/analysis?input=${inputValue}&n=${ngramSize}&num_to_predict=${wordsToPredict}$statistics=${statistics}`}
+                    to={`/analysis?input=${inputValue}&n=${ngramSize}&num_to_predict=${wordsToPredict}&statistics=${statistics}`}
                    >Predict </Link>
             </div>
         </div>
