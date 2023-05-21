@@ -1,7 +1,7 @@
 const mentorName = 'Volodymyr  Davydenko, mentor';
 const studentName1 = 'Anastasiia Shvets, UCU CS student';
 const studentName2 = 'Yaryna Fialko, UCU CS student';
-const studentName3 = 'Olgha Nahurna, UCU CS student';
+const studentName3 = 'Olha Nahurna, UCU CS student';
 const studentName4 = 'Oleksandra Maslenchenko, UCU CS student';
 
 const mentorDescription = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis massa enim, maximus sit amet ullamcorper et, hendrerit molestie risus. Donec laoreet lacus eu quam tincidunt, bibendum laoreet velit ornare. Aliquam tempor faucibus sodales.';

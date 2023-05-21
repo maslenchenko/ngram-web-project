@@ -12,7 +12,7 @@
 .footer .footer-contacts {
   position: inherit;
   right: 11%;
-  width: 14%;
+  width: 30%;
   text-transform: uppercase;
   font-style: normal;
   font-weight: 500;
@@ -24,7 +24,7 @@
 .footer .footer-text {
   position: inherit;
   left: 11%;
-  width: 19%;
+  width: 50%;
   text-transform: uppercase;
   line-height: 25%;
 }
@@ -39,4 +39,10 @@
   font-style: normal;
   font-weight: 540;
   font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer .footer-text .ngram {
+    line-height: 15px;
+  }
 }
