@@ -1,97 +1,143 @@
-import React, { useState } from "react";
-import "../styles/fileloader.css";
-import axios from "axios";
-import {toast, ToastContainer} from "react-toastify";
+// import React, { useState } from "react";
+// import "../styles/fileloader.css";
+// import axios from "axios";
+// import {toast, ToastContainer} from "react-toastify";
 
-function FileLoader({onSuccess, props}) {
+// function FileLoader({onSuccess, props}) {
 
-    // const [selectedFiles, setSelectedFiles] = useState(null);
+//     const [files, setFiles] = useState([]);
 
-    // const handleFileSelection = (event) => {
-    //     const files = event.target.files;
-    //     const maxSize = props.maxSize || Infinity;
-    //     const validFiles = Array.from(files).filter((file) => file.size <= maxSize);
-    //     setSelectedFiles(validFiles);
-    // };
-    //
-    // const handleFileUpload = () => {
-    //     console.log("Selected files:", selectedFiles);
-    //     // Add your file upload logic or API call here
-    // };
+//     const onInputChange = (e) => {
+//         const files = e.target.files;
+//         const allowedExtensions = [".txt"];
+//         const selectedFiles = Array.from(files).filter((file) => {
+//             const fileName = file.name;
+//             const fileExtension = fileName.substring(fileName.lastIndexOf(".")).toLowerCase();
+//             return allowedExtensions.includes(fileExtension);
+//         });
 
-    const [files, setFiles] = useState([]);
+//         if (selectedFiles.length === 0) {
+//             toast.error('Invalid file format. Only .txt files are allowed.');
+//         } else {
+//             setFiles(selectedFiles);
+//             toast.success('Files selected successfully.');
+//         }
+//     };
 
-    const onInputChange = (e) => {
-        const files = e.target.files;
-        const allowedExtensions = [".txt"];
-        const selectedFiles = Array.from(files).filter((file) => {
-            const fileName = file.name;
-            const fileExtension = fileName.substring(fileName.lastIndexOf(".")).toLowerCase();
-            return allowedExtensions.includes(fileExtension);
-        });
+//     const onSubmit = (e) => {
+//         e.preventDefault();
 
-        if (selectedFiles.length === 0) {
-            toast.error('Invalid file format. Only .txt files are allowed.');
-        } else {
-            setFiles(selectedFiles);
-            toast.success('Files selected successfully.');
-        }
-    };
+//         const data = new FormData();
 
-    const onSubmit = (e) => {
-        e.preventDefault();
+//         for(let i = 0; i < files.length; i++) {
+//             data.append('file', files[i]);
+//         }
 
-        const data = new FormData();
-
-        for(let i = 0; i < files.length; i++) {
-            data.append('file', files[i]);
-        }
-
-        axios.post('//localhost:8000/upload', data)
-            .then((response) => {
-                toast.success('Upload Success');
-                onSuccess(response.data)
-            })
-            .catch((e) => {
-                toast.error('Upload Error')
-            })
-    };
+//         axios.post('//localhost:8000/upload', data)
+//             .then((response) => {
+//                 toast.success('Upload Success');
+//                 onSuccess(response.data)
+//             })
+//             .catch((e) => {
+//                 toast.error('Upload Error')
+//             })
+//     };
 
 
-    return (
-        <form method="post" action="#" id="#" onSubmit={onSubmit} className={'file-form'}>
-            <div className="form-group files">
-                <label>Upload Your File </label>
-                <input type="file"
-                       onChange={onInputChange}
-                       className="form-control"
-                       multiple
-                       accept=".txt" />
-            </div>
-            <button class={"submit-button"}>Submit</button>
-            <ToastContainer />
-        </form>);
-}
-//   return (
-//     <div className="file-load">
-//       <button onClick={() => document.getElementById("file-input").click()}>
-//         Upload
-//       </button>
-//       {props.maxSize && <p>Maximum file size: {props.maxSize} bytes</p>}
-//       <div className="selected-files">
-//         <p>Selected files: {selectedFiles ? selectedFiles.length : 0}</p>
-//       </div>
-//       <input
-//         id="file-input"
-//         type="file"
-//         multiple
-//         onChange={handleFileSelection}
-//         accept=".txt"
-//         style={{ display: "none" }}
-//       />
-//     </div>
-//   );
+//     return (
+//         <form method="post" action="#" id="#" onSubmit={onSubmit} className={'file-form'}>
+//             <div className="form-group files">
+//                 <label>Upload Your File </label>
+//                 <input type="file"
+//                        onChange={onInputChange}
+//                        className="form-control"
+//                        multiple
+//                        accept=".txt" />
+//             </div>
+//             <button class={"submit-button"}>Submit</button>
+//             <ToastContainer />
+//         </form>);
 // }
 
 
+
+// export default FileLoader;
+
+import React, { useState } from "react";
+import "../styles/fileloader.css";
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+
+function FileLoader({ onSuccess }) {
+  const [selectedFiles, setSelectedFiles] = useState(null);
+
+  const handleFileSelection = (event) => {
+    const files = event.target.files;
+    const allowedExtensions = [".txt"];
+    const maxSize = 5242880; // Maximum file size in bytes (5MB)
+    const selectedFiles = Array.from(files).filter((file) => {
+      const fileName = file.name;
+      const fileExtension = fileName.substring(
+        fileName.lastIndexOf(".")
+      ).toLowerCase();
+      const isAllowedExtension = allowedExtensions.includes(fileExtension);
+      const isWithinMaxSize = file.size <= maxSize;
+      return isAllowedExtension && isWithinMaxSize;
+    });
+
+    setSelectedFiles(selectedFiles);
+    if (selectedFiles.length === 0) {
+      toast.error("Invalid file format or size. Only .txt files up to 5MB are allowed.");
+    } else {
+      toast.success("Files added successfully!");
+    }
+  };
+
+  const handleFileUpload = () => {
+    if (selectedFiles) {
+      const data = new FormData();
+
+      for (let i = 0; i < selectedFiles.length; i++) {
+        data.append("file", selectedFiles[i]);
+      }
+
+      axios
+        .post("//localhost:8000/upload", data)
+        .then((response) => {
+          toast.success("Files uploaded successfully!");
+          onSuccess(response.data);
+        })
+        .catch((e) => {
+          toast.error("Upload Error");
+        });
+    } else {
+      toast.error("No files selected.");
+    }
+  };
+
+  return (
+    <div className="file-load">
+      <div className="selected-files">
+        <p>Files: {selectedFiles ? selectedFiles.length : 0}</p>
+      </div>
+      <button className="select-button" onClick={() => document.getElementById("file-input").click()}>
+        Select
+      </button>
+      <input
+        id="file-input"
+        type="file"
+        multiple
+        onChange={handleFileSelection}
+        accept=".txt"
+        style={{ display: "none" }}
+      />
+      <button className="upload-button" onClick={handleFileUpload}>
+        Upload
+      </button>
+      <ToastContainer />
+    </div>
+  );
+}
+
 export default FileLoader;
+

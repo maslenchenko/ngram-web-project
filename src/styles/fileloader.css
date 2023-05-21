@@ -8,8 +8,8 @@
   background: #ffffff;
   border: 5px solid rgba(173, 173, 196, 0.45);
   border-radius: 20px;
+  display: table;
 }
-
 .file-load button {
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
@@ -17,37 +17,53 @@
   border-radius: 15px;
   padding: 1.5%;
   height: 55%;
+  width: 30%;
   width: 20%;
   border: none;
   color: white;
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 500;
+  font-size: 20px;
   font-size: 17px;
   position: absolute;
   top: 21%;
-  right: 6%;
+  /* right: 6%; */
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
-
 .file-load button:focus,
 .file-load button:active,
 .file-load button:hover {
-    background-color: rgba(45, 155, 240, 1);
-    transition: background-color 0.2s;
+  background-color: rgba(45, 155, 240, 1);
+  transition: background-color 0.2s;
+}
+
+.file-load .upload-button {
+    right: 6%;
+}
+
+.file-load .select-button {
+    right: 30%;
+}
+
+.file-load .input-container {
+    background-color: #808080;
 }
 
 /* .file-load label {
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 30px;
-  text-transform: uppercase;
-  color: #808080;
-  position: absolute;
-  left: 6%;
-  top: 24%;
-} */
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #808080;
+    position: absolute;
+    left: 6%;
+    top: 24%;
+    */
 
 .file-load .selected-files {
     text-transform: uppercase;
@@ -56,79 +72,19 @@
     font-weight: 500;
     font-size: 18px;
     color: #808080;
-    position: absolute;
-    left: 6%;
-    top: 20%;
-}
-
-
-/*.form-group {*/
-/*  margin-top:300px;*/
-/*  margin-left: 200px;*/
-/*}*/
-
-.files input {
-    outline: 2px dashed #92b0b3;
-    outline-offset: -10px;
-    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
-    transition: outline-offset .15s ease-in-out, background-color .15s linear;
-    padding: 120px 0 85px 35%;
-    text-align: center !important;
-    margin: 0;
-    width: 100% !important;
-}
-
-.files input:focus {
-    outline: 2px dashed #92b0b3;
-    outline-offset: -10px;
-    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
-    transition: outline-offset .15s ease-in-out, background-color .15s linear;
-    border: 1px solid #92b0b3;
-}
-
-.files {
-    position: relative
-}
-
-.files:after {
-    pointer-events: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 50px;
-    right: 0;
-    height: 56px;
-    content: "";
-    background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
-    display: block;
-    margin: 0 auto;
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-
-.color input {
-    background-color: #f1f1f1;
-}
-
-.files:before {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    pointer-events: none;
-    width: 100%;
-    right: 0;
-    height: 57px;
-    content: " or drag it here. ";
-    display: block;
-    margin: 0 auto;
-    color: #2ea591;
-    font-weight: 600;
-    text-transform: capitalize;
+    display: table-cell;
+    vertical-align: middle;
+    width: 32%;
     text-align: center;
 }
 
-.file-form {
-    /*border: #2ea591 solid 2px;*/
-    margin-top: 310px;
-    margin-left: 200px;
-}
+@media (max-width: 1000px) {
+    .file-load .selected-files {
+        width: 40%;
+    }
+  }
+
+.toast-success {
+    text-transform: uppercase;
+    font-style: "Poppins", sans-serif;
+  }
