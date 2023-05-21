@@ -8,6 +8,7 @@
   background: #ffffff;
   border: 5px solid rgba(173, 173, 196, 0.45);
   border-radius: 20px;
+  display: table;
 }
 
 .discover-container .discover-title {
@@ -17,9 +18,12 @@
   font-weight: 500;
   font-size: 18px;
   color: #808080;
-  position: absolute;
-  left: 6%;
-  top: 20%;
+  /* position: absolute; */
+  /* left: 6%; */
+  width: 60%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .discover-container .discover-list {
@@ -32,6 +36,9 @@
   width: 20%;
   top: 22%;
   border-radius: 15px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .discover-container .discover-list:focus,

@@ -4,7 +4,13 @@ import "../styles/contextwords.css";
 function ContextWords({range, setRange}) {
 
   const handleRangeChange = (event) => {
-    setRange(Number(event.target.value));
+    const newRange = parseInt(event.target.value, 10);
+    const maxRange = 100;
+    if (newRange > maxRange) {
+      setRange(maxRange);
+    } else {
+      setRange(newRange);
+    }
   };
 
   return (
