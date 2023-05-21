@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import '../styles/analysis.css'
+import { ToastContainer, toast} from 'react-toastify';
+
 
 class Analysis extends Component {
     constructor(props) {
@@ -7,12 +9,12 @@ class Analysis extends Component {
         this.state = {
             n: 0,
             numToPredict: 0,
-            path: '',
+            path: './server/public',
             context: '',
             predictedWords: '',
             resultTrain: {},
             resultPredict: {},
-            resultPrevious: {}
+            resultPrevious: {},
         }
 
         this.apiUrl = 'http://localhost:8080';
@@ -27,6 +29,9 @@ class Analysis extends Component {
         this.state.context = searchParams.get('input');
         this.state.n = searchParams.get('n');
         this.state.numToPredict = searchParams.get('num_to_predict');
+
+        this.handleTrainSubmit();
+
     }
 
     handleNInput(event) {
@@ -46,16 +51,28 @@ class Analysis extends Component {
     }
 
     async handleTrainSubmit(event) {
-        event.preventDefault();
-        const url = `${this.apiUrl}/train?path=${this.state.path}&n=${this.state.n}`;
-        fetch(url) //, {headers: new Headers({
-            // "ngrok-skip-browser-warning": "69420"})} )
-            .then(res => res.json())
-            .then(res => this.setState({
-                path: this.state.path,
-                n: this.state.n,
-                resultTrain: res
-            }));
+        // event.preventDefault();
+        try {
+            const url = `${this.apiUrl}/train?path=${this.state.path}&n=${this.state.n}`;
+            fetch(url) //, {headers: new Headers({
+                // "ngrok-skip-browser-warning": "69420"})} )
+                .then(res => res.json())
+                .then(res => this.setState({
+                    path: this.state.path,
+                    n: this.state.n,
+                    resultTrain: res,
+                }));
+            toast.success('Model trained successfully!');
+        } catch (e) {
+            toast.error('Error training model.');
+        }
+    }
+
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.n !== this.state.n) {
+            this.handleTrainSubmit();
+        }
     }
 
     handleInputChange = (event) => {
@@ -86,23 +103,13 @@ class Analysis extends Component {
                 <div className='analysis-unit'>
                     <p>Analysis</p>
                     <div>
-                        <form onSubmit={this.handleTrainSubmit}>
-                            <label>
-                                Enter n:
-                                <input type="number" value={this.state.n} onChange={this.handleNInput}/>
-                            </label>
-                            <label>
-                                Enter directory of Gutenberg files:
-                                <input type="text" value={this.state.path} onChange={this.handlePathInput}/>
-                            </label>
-                            <button type="submit">Train</button>
-                        </form>
                         {this.state.resultTrain.output ?
                             <p>Result: {this.state.resultTrain.output.map((item, i) => <p key={i}>{item}</p>)}</p>
                             : <p>Result: </p>}
 
                     </div>
                 </div>
+                <ToastContainer/>
             </div>
         );
     }

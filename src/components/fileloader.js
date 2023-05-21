@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "../styles/fileloader.css";
 import axios from "axios";
-import {toast} from "react-toastify";
+import {toast, ToastContainer} from "react-toastify";
 
 function FileLoader({onSuccess, props}) {
+
     // const [selectedFiles, setSelectedFiles] = useState(null);
 
     // const handleFileSelection = (event) => {
@@ -21,7 +22,20 @@ function FileLoader({onSuccess, props}) {
     const [files, setFiles] = useState([]);
 
     const onInputChange = (e) => {
-        setFiles(e.target.files)
+        const files = e.target.files;
+        const allowedExtensions = [".txt"];
+        const selectedFiles = Array.from(files).filter((file) => {
+            const fileName = file.name;
+            const fileExtension = fileName.substring(fileName.lastIndexOf(".")).toLowerCase();
+            return allowedExtensions.includes(fileExtension);
+        });
+
+        if (selectedFiles.length === 0) {
+            toast.error('Invalid file format. Only .txt files are allowed.');
+        } else {
+            setFiles(selectedFiles);
+            toast.success('Files selected successfully.');
+        }
     };
 
     const onSubmit = (e) => {
@@ -51,9 +65,11 @@ function FileLoader({onSuccess, props}) {
                 <input type="file"
                        onChange={onInputChange}
                        className="form-control"
-                       multiple/>
+                       multiple
+                       accept=".txt" />
             </div>
             <button class={"submit-button"}>Submit</button>
+            <ToastContainer />
         </form>);
 }
 //   return (
