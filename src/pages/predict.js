@@ -10,10 +10,7 @@ function Predict() {
     const [ngramSize, setNgramSize] = useState(1);
     const [inputValue, setInputValue] = useState("");
     const [wordsToPredict, setWordsToPredict] = useState(1);
-    // const [file, setFile] = useState(null);
     const [statistics, setStatistics] = useState(1);
-    const [trainMessage, setTrainMessage] = useState(null);
-
     const [files, setFiles] = useState([]);
     const onSuccess = (savedFiles) => {
         setFiles(savedFiles)

@@ -17,6 +17,8 @@ const studentEmail3 = 'email@ucu.edu.ua';
 const studentEmail4 = 'email@ucu.edu.ua';
 
 
-export {mentorName, studentName1, studentName2, studentName3, studentName4,
+export {
+    mentorName, studentName1, studentName2, studentName3, studentName4,
     mentorDescription, studentDescription1, studentDescription2, studentDescription3,
-    studentDescription4, mentorEmail, studentEmail1, studentEmail2, studentEmail3, studentEmail4};
+    studentDescription4, mentorEmail, studentEmail1, studentEmail2, studentEmail3, studentEmail4
+};

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
+import {ToastContainer, toast} from 'react-toastify';
 import '../styles/analysis.css'
-import { ToastContainer, toast} from 'react-toastify';
 
 
 class Analysis extends Component {
@@ -31,7 +31,6 @@ class Analysis extends Component {
         this.state.numToPredict = searchParams.get('num_to_predict');
 
         this.handleTrainSubmit();
-
     }
 
     handleNInput(event) {
@@ -68,7 +67,6 @@ class Analysis extends Component {
         }
     }
 
-
     componentDidUpdate(prevProps, prevState) {
         if (prevState.n !== this.state.n) {
             this.handleTrainSubmit();
@@ -84,7 +82,6 @@ class Analysis extends Component {
                 .then(res => this.setState({predictedText: res.output[1]}));
         });
     }
-
 
     render() {
         return (

@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/team.css';
 
-
 function TeamMember({name, description, email, student = true}) {
     return (
         <div className="team-member">

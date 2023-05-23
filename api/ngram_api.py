@@ -1,13 +1,15 @@
+import subprocess
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import subprocess
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
+
 @app.route('/', methods=['GET'])
 def index():
     return jsonify({'output': 'Hello World!'})
+
 
 @app.route('/predict', methods=['GET'])
 def predict():
@@ -19,6 +21,8 @@ def predict():
     output = subprocess.check_output(['./cpp_program/bin/predict', str(n), str(num_to_predict)] + context_lst)
 
     return jsonify({'output': output.decode('utf-8').strip().split("\n")})
+
+
 @app.route('/train', methods=['GET'])
 def train():
     n = int(request.args.get('n'))

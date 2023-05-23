@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import '../styles/predictinput.css'
 
+
 function PredictInput({inputValue, setInputValue, ngramSize, wordsToPredict, statistics}) {
 
     const handleInputChange = (event) => {
@@ -25,7 +26,7 @@ function PredictInput({inputValue, setInputValue, ngramSize, wordsToPredict, sta
                 />
                 <Link
                     to={`/analysis?input=${inputValue}&n=${ngramSize}&num_to_predict=${wordsToPredict}&statistics=${statistics}`}
-                   >Predict </Link>
+                >Predict </Link>
             </div>
         </div>
     );
