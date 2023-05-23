@@ -58,8 +58,7 @@
     font-weight: 300;
     font-size: 16px;
     max-width: 535px;
-    margin: 0 auto;
-    margin-top: -1%;
+    margin: -1% auto 0 auto;
 }
 
 .student-description {

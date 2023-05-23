@@ -1,5 +1,6 @@
 
 .contact-main {
+    width: 100%;
     font-family: "Poppins", sans-serif;
     text-transform: uppercase;
     text-align: center;
@@ -7,7 +8,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 100%;
 }
 
 .contact-form {
@@ -35,8 +35,6 @@
     height: 3rem;
     width: calc(100% - 8.35rem);
     padding: 0.25rem 4rem;
-    font-size: 1rem;
-    line-height: 1.5rem;
     transition: border-color 0.2s ease-in-out;
     background: white;
     color: #808080;
@@ -82,19 +80,19 @@
 }
 
 .send-button {
+    position: absolute;
     background-color: rgba(45, 155, 240, 0.6);
     width: 130px;
     height: 50px;
     border-radius: 15px;
     border: none;
-    position: absolute;
     top: 20%;
     right: 9%;
     font-family: "Poppins", sans-serif;
     text-transform: uppercase;
-    color: white;
     font-weight: 400;
     font-size: 20px;
+    color: white;
 }
 
 .send-button:hover {

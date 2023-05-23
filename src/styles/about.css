@@ -1,6 +1,5 @@
 .about-heading {
     text-align: center;
-    font-size: 3rem;
     margin-top: 10rem;
     margin-bottom: 50px;
     font-family: 'Poppins', sans-serif;
@@ -20,5 +19,4 @@
 
 .about-main {
     width: 100%;
-    border: #000000 1px solid;
 }

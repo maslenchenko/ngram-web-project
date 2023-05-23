@@ -69,7 +69,7 @@ function FileLoader({onSuccess}) {
             <button className="upload-button" onClick={handleFileUpload}>
                 Upload
             </button>
-            <ToastContainer/>
+            <div className="notification"><ToastContainer/></div>
         </div>
     );
 }

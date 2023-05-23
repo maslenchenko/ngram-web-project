@@ -9,7 +9,6 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 15px 40px;
-
     margin-top: 2rem;
     font-size: 1.5rem;
     font-weight: 600;
@@ -25,12 +24,12 @@
 .dropdown-text {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
-    font-size: 17px;
+    font-size: 20px;
+    line-height: 33px;
     background-color: white;
     border-radius: 0 0 20px 20px;
     margin-bottom: 20px;
     padding: 40px;
-    line-height: 25px;
     margin-top: -20px;
     text-align: left;
 }
@@ -45,5 +44,5 @@
 
 .dropdown-icon {
     font-size: 3rem;
-    color:  #808080;
+    color: #808080;
 }

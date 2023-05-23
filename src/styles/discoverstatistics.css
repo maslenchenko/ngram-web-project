@@ -1,59 +1,57 @@
 .discover-container {
-  position: absolute;
-  right: 11%;
-  top: 45%;
-  height: 14%;
-  width: 30%;
-  box-sizing: border-box;
-  background: #ffffff;
-  border: 5px solid rgba(173, 173, 196, 0.45);
-  border-radius: 20px;
-  display: table;
+    position: absolute;
+    right: 11%;
+    top: 45%;
+    height: 14%;
+    width: 30%;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 5px solid rgba(173, 173, 196, 0.45);
+    border-radius: 20px;
+    display: table;
 }
 
 .discover-container .discover-title {
-  text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  color: #808080;
-  /* position: absolute; */
-  /* left: 6%; */
-  width: 60%;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+    width: 60%;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #808080;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .discover-container .discover-list {
-  position: absolute;
-  right: 6%;
-  border: white;
-  border: 5px solid rgba(45, 155, 240, 0.6);
-  padding: 1.5%;
-  height: 55%;
-  width: 20%;
-  top: 22%;
-  border-radius: 15px;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+    width: 20%;
+    height: 55%;
+    position: absolute;
+    top: 22%;
+    right: 6%;
+    border: #ffffff;
+    border: 5px solid rgba(45, 155, 240, 0.6);
+    padding: 1.5%;
+    border-radius: 15px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .discover-container .discover-list:focus,
 .discover-container .discover-list:hover {
-  border: 5px solid rgba(45, 155, 240, 1);
-  transition: background-color 0.2s;
-  outline: none;
+    border: 5px solid rgba(45, 155, 240, 1);
+    transition: background-color 0.2s;
+    outline: none;
 }
 
 .discover-container .discover-list option,
 .discover-container .discover-list option:checked::selection {
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  color: #000000;
-  text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #000000;
+    text-transform: uppercase;
 }

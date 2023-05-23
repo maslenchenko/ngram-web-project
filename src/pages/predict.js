@@ -4,7 +4,6 @@ import FileLoader from "../components/fileloader.js";
 import DiscoverStatistics from "../components/discoverstatistics.js";
 import NgramWords from "../components/ngramwords.js";
 import ContextWords from "../components/contextwords.js";
-import {ToastContainer} from "react-toastify";
 
 function Predict() {
     const [ngramSize, setNgramSize] = useState(1);
@@ -24,7 +23,6 @@ function Predict() {
             <DiscoverStatistics setStatistics={setStatistics}/>
             <NgramWords range={ngramSize} setRange={setNgramSize}/>
             <ContextWords range={wordsToPredict} setRange={setWordsToPredict}/>
-            <ToastContainer/>
         </>
     );
 }
