@@ -11,7 +11,7 @@ function DiscoverStatistics({setStatistics}) {
     return (
         <div className="discover-container">
             <p className="discover-title">Discover statistics</p>
-            <select className="discover-list" onChange={handleSelectChange}>
+            <select className="discover-list" onChange={handleSelectChange} defaultValue="yes">
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
             </select>
