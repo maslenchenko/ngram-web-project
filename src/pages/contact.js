@@ -15,8 +15,8 @@ function Contact() {
             return;
         }
 
-        emailjs.sendForm('service_wmqy5vj', 'template_ioh2mxg',
-            form.current, 'NZqxe7-X83cSUXeNZ')
+        emailjs.sendForm('service_lz20r5r', 'template_hqxyoln',
+            form.current, 'G1LF1QGwO8Fs1wsCC')
             .then((result) => {
                 console.log(result.text);
                 toast.success("Your message has been sent. We will contact you soon.");
