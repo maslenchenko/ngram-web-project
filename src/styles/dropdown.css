@@ -1,48 +1,46 @@
-
 .dropdown-main {
-    font-family: 'Poppins', sans-serif;
-    padding: 0 15%;
+  font-family: "Poppins", sans-serif;
+  padding: 0 15%;
 }
 
 .dropdown-title {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 15px 40px;
-    margin-top: 2rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: black;
-    background-color: white;
-    border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px 40px;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+  background-color: white;
+  border-radius: 20px;
 }
 
 .dropdown-title:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .dropdown-text {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 33px;
-    background-color: white;
-    border-radius: 0 0 20px 20px;
-    margin-bottom: 20px;
-    padding: 40px;
-    margin-top: -20px;
-    text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 33px;
+  background-color: white;
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 20px;
+  padding: 40px;
+  margin-top: -20px;
+  text-align: left;
 }
 
-
 .icon-container {
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dropdown-icon {
-    font-size: 3rem;
-    color: #808080;
+  font-size: 3rem;
+  color: #808080;
 }
