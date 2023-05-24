@@ -13,8 +13,8 @@ class Analysis extends Component {
             context: '',
             predictedWords: '',
             resultTrain: {},
-            resultPredict: {},
-            resultPrevious: {},
+            resultPredict: [],
+            analysis: {},
         }
 
         this.apiUrl = 'http://localhost:8080';
@@ -29,6 +29,7 @@ class Analysis extends Component {
         this.state.context = searchParams.get('input');
         this.state.n = searchParams.get('n');
         this.state.numToPredict = searchParams.get('num_to_predict');
+        this.state.statistics = searchParams.get('statistics');
 
         this.handleTrainSubmit();
     }
@@ -76,11 +77,16 @@ class Analysis extends Component {
     handleInputChange = (event) => {
         const context = event.target.value;
         this.setState({context}, () => {
-            const url = `${this.apiUrl}/predict?n=${this.state.n}&num_to_predict=${this.state.numToPredict}&context=${this.state.context}`;
+            let url = `${this.apiUrl}/predict?n=${this.state.n}&num_to_predict=${this.state.numToPredict}&context=${this.state.context}`;
+            if (this.state.statistics === '1') {
+                url = `${this.apiUrl}/analyze?n=${this.state.n}&num_to_predict=${this.state.numToPredict}&context=${this.state.context}`;
+            }
+            console.log(url);
             fetch(url)
                 .then(res => res.json())
-                .then(res => this.setState({predictedText: res.output[1]}));
+                .then(res => this.setState({resultPredict: res.output, predictedText: res.output[0]}));
         });
+        this.state.resultPredict.slice(1, this.state.resultPredict.length);
     }
 
     render() {
@@ -101,8 +107,11 @@ class Analysis extends Component {
                     <p>Analysis</p>
                     <div>
                         {this.state.resultTrain.output ?
-                            <p>Result: {this.state.resultTrain.output.map((item, i) => <p key={i}>{item}</p>)}</p>
-                            : <p>Result: </p>}
+                            <p>Training: {this.state.resultTrain.output.map((item, i) => <p key={i}>{item}</p>)}</p>
+                            : <p>Training: </p>}
+                        {(this.state.statistics === '1') ?
+                            <p>Statistics: {this.state.resultPredict.slice(1, this.state.resultPredict.length).map((item, i) => <p key={i}>{item}</p>)}</p>
+                            : <p></p>}
 
                     </div>
                 </div>
